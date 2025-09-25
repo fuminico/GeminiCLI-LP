@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 週末、あなたのリビングが"映画館"になる。| 100インチ級の没入感を、5分で。</title>
+    <meta name="description" content="配線地獄なし。電源＋Wi-Fiで、今夜から自宅が映画館。30〜40代男性に選ばれる高輝度レーザープロジェクターで、週末の新しい過ごし方を。">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP for animations -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    
+    <!-- Lottie for micro animations -->
+    <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/build/player/lottie.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div id="progress-bar" class="fixed top-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 z-50 transition-all duration-300"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen bg-cover bg-center bg-no-repeat" style="background-image: url('img/hero-bg.jpg');">
+        <div class="absolute inset-0 bg-slate-900 bg-opacity-60"></div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 container mx-auto px-4 py-16 flex items-center min-h-screen">
+            <div class="text-left text-white max-w-2xl">
+                <!-- Badge -->
+                <div class="hero-badge mb-6 inline-flex items-center bg-cyan-400 bg-opacity-10 text-cyan-300 px-4 py-2 rounded-full text-sm font-medium border border-cyan-400 border-opacity-30">
+                    <i class="fas fa-star mr-2"></i>
+                    ★4.8/5 | 30〜40代男性に選ばれています
+                </div>
+                
+                <!-- Main Heading -->
+                <h1 class="hero-title text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight text-shadow">
+                    <span class="text-cyan-300">100インチ級の没入感を、</span><br>
+                    <span>5分で。</span>
+                </h1>
+                
+                <!-- Lead Text -->
+                <p class="hero-lead text-xl md:text-2xl mb-8 text-slate-200 leading-relaxed">
+                    配線地獄なし。電源＋Wi-Fiで、今夜から"自宅が映画館"。
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="hero-cta flex flex-col sm:flex-row gap-4 items-start">
+                    <button class="cta-primary bg-cyan-400 hover:bg-cyan-300 text-slate-900 px-8 py-4 rounded-lg text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-play mr-2"></i>
+                        5分で体験する
+                    </button>
+                    <button class="cta-secondary bg-transparent border-2 border-slate-400 text-slate-200 hover:bg-slate-200 hover:text-slate-900 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300">
+                        <i class="fas fa-box mr-2"></i>
+                        在庫を確認
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section id="problems" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                    映画館から、足が遠のいていませんか？
+                </h2>
+                <p class="text-slate-600 text-lg">30〜40代・忙しいあなたのための解決策</p>
+            </div>
+            
+            <div class="bento-grid max-w-6xl mx-auto">
+                <div class="bento-item reveal">
+                    <div class="text-cyan-500 text-3xl mb-4">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2 text-slate-800">時間がない</h3>
+                    <p class="text-slate-600">映画館に行く時間がない／家族の予定が合わない</p>
+                </div>
+                
+                <div class="bento-item reveal">
+                    <div class="text-cyan-500 text-3xl mb-4">
+                        <i class="fas fa-volume-down"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2 text-slate-800">迫力不足</h3>
+                    <p class="text-slate-600">家のテレビだと迫力不足、音も物足りない</p>
+                </div>
+                
+                <div class="bento-item reveal">
+                    <div class="text-cyan-500 text-3xl mb-4">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2 text-slate-800">設置が複雑</h3>
+                    <p class="text-slate-600">設置が面倒そうで、機材選びの沼が怖い</p>
+                </div>
+                
+                <div class="bento-item reveal">
+                    <div class="text-cyan-500 text-3xl mb-4">
+                        <i class="fas fa-volume-mute"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2 text-slate-800">夜は音量制限</h3>
+                    <p class="text-slate-600">夜は音量を上げられず、臨場感が出ない</p>
+                </div>
+                
+                <div class="bento-item reveal">
+                    <div class="text-cyan-500 text-3xl mb-4">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2 text-slate-800">コスパの不安</h3>
+                    <p class="text-slate-600">「結局コスパ悪い？」と一歩踏み出せない</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                    自宅シアターで得られる3つのベネフィット
+                </h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="benefit-card reveal bg-slate-50 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <div class="text-cyan-500 text-4xl mb-4">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-4 text-slate-800">✅ 圧倒的没入感</h3>
+                    <p class="text-slate-600">100インチ級の大画面×セリフ強調サウンド。暗室不要、明るめの部屋でもくっきり。</p>
+                </div>
+                
+                <div class="benefit-card reveal bg-slate-50 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <div class="text-cyan-500 text-4xl mb-4">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-4 text-slate-800">✅ コスパ最強の自由時間</h3>
+                    <p class="text-slate-600">移動・待ち時間ゼロ。<strong>「子どもが寝た後＝開演時間」</strong>。月数回の映画館代で家族全員が何度でも。</p>
+                </div>
+                
+                <div class="benefit-card reveal bg-slate-50 p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <div class="text-cyan-500 text-4xl mb-4">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-4 text-slate-800">✅ 設置ストレスゼロ設計</h3>
+                    <p class="text-slate-600">電源＆Wi-Fiで即スタート。自動台形補正／自動フォーカス。静音・省スペースで生活感を壊さない。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                    体験者の声
+                </h2>
+                <p class="text-slate-600 text-lg">30〜40代／実名イニシャル</p>
+            </div>
+            
+            <div class="testimonials-carousel relative max-w-4xl mx-auto">
+                <div class="testimonials-container overflow-hidden">
+                    <div class="testimonials-track flex gap-4">
+                        <div class="testimonial-card flex-none w-full bg-white p-8 rounded-xl shadow-md">
+                            <div class="flex items-start gap-4">
+                                <div class="avatar w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                                    T.K
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-lg mb-2 text-slate-800">T.Kさん（38・都内マンション／2児の父）</h4>
+                                    <p class="text-slate-600 leading-relaxed">「週末の映画は渋滞＆人混みで挫折続き。導入後、<strong>就寝後に夫婦で1本</strong>が定番に。<strong>音のセリフ強調</strong>が想像以上で、アクションも聴き取りやすい。」</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card flex-none w-full bg-white p-8 rounded-xl shadow-md">
+                            <div class="flex items-start gap-4">
+                                <div class="avatar w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                                    S.M
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-lg mb-2 text-slate-800">S.Mさん（41・戸建て）</h4>
+                                    <p class="text-slate-600 leading-relaxed">「配線が苦手で敬遠。<strong>本当に5分で画が出た</strong>のに驚き。<strong>壁投写プリセット</strong>でスクリーンなしでも十分キレイ。<strong>月2回の映画館代→0</strong>になりました。」</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card flex-none w-full bg-white p-8 rounded-xl shadow-md">
+                            <div class="flex items-start gap-4">
+                                <div class="avatar w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                                    H.Y
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-lg mb-2 text-slate-800">H.Yさん（35・在宅ワーク）</h4>
+                                    <p class="text-slate-600 leading-relaxed">「夜は音量を下げるから臨場感が…と思っていたけど、<strong>夜間モード＋低音抑制</strong>で<strong>家族の睡眠もOK</strong>。<strong>字幕くっきり</strong>で深夜の海外ドラマが捗る。」</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card flex-none w-full bg-white p-8 rounded-xl shadow-md">
+                            <div class="flex items-start gap-4">
+                                <div class="avatar w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                                    K.N
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-lg mb-2 text-slate-800">K.Nさん（39・賃貸1LDK）</h4>
+                                    <p class="text-slate-600 leading-relaxed">「場所を取らないのが助かる。<strong>静音ファン</strong>で作業の邪魔にならず、昼間の音楽ライブ映像も<strong>窓際OKの明るさ</strong>で楽しめる。」</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Controls -->
+                <button class="testimonials-prev absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white rounded-full w-12 h-12 shadow-lg flex items-center justify-center text-slate-600 hover:text-cyan-500 transition-colors">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="testimonials-next absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white rounded-full w-12 h-12 shadow-lg flex items-center justify-center text-slate-600 hover:text-cyan-500 transition-colors">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Dots Indicator -->
+                <div class="testimonials-dots flex justify-center mt-8 gap-2">
+                    <button class="dot w-3 h-3 rounded-full bg-slate-300 hover:bg-cyan-500 transition-colors active"></button>
+                    <button class="dot w-3 h-3 rounded-full bg-slate-300 hover:bg-cyan-500 transition-colors"></button>
+                    <button class="dot w-3 h-3 rounded-full bg-slate-300 hover:bg-cyan-500 transition-colors"></button>
+                    <button class="dot w-3 h-3 rounded-full bg-slate-300 hover:bg-cyan-500 transition-colors"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Set Section -->
+    <section id="product-set" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                    セット内容
+                </h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <div class="product-item reveal text-center">
+                    <div class="product-icon w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center text-white text-2xl">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2 text-slate-800">高輝度レーザープロジェクター</h3>
+                    <p class="text-slate-600 text-sm">自動台形補正／自動フォーカス</p>
+                </div>
+                
+                <div class="product-item reveal text-center">
+                    <div class="product-icon w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center text-white text-2xl">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2 text-slate-800">壁投写最適化プリセット</h3>
+                    <p class="text-slate-600 text-sm">スクリーン不要</p>
+                </div>
+                
+                <div class="product-item reveal text-center">
+                    <div class="product-icon w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center text-white text-2xl">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2 text-slate-800">ワイヤレスサウンドバー</h3>
+                    <p class="text-slate-600 text-sm">夜間モード／セリフ強調</p>
+                </div>
+                
+                <div class="product-item reveal text-center">
+                    <div class="product-icon w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center text-white text-2xl">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2 text-slate-800">クイックスタートガイド</h3>
+                    <p class="text-slate-600 text-sm"><strong>5分で視聴開始</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                    よくある質問（FAQ）
+                </h2>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="faq-item bg-white rounded-lg shadow-sm overflow-hidden border border-slate-200">
+                    <button class="faq-question w-full text-left px-6 py-4 font-semibold text-lg focus:outline-none hover:bg-slate-50 flex items-center justify-between">
+                        <span class="text-slate-800">Q. 明るい部屋でも見えますか？</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300 text-slate-500"></i>
+                    </button>
+                    <div class="faq-answer px-6 pt-0 pb-4">
+                        <p class="text-slate-600">A. 日中のリビングでも視認性を確保する輝度です。夜間はさらに高コントラストで楽しめます。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-sm overflow-hidden border border-slate-200">
+                    <button class="faq-question w-full text-left px-6 py-4 font-semibold text-lg focus:outline-none hover:bg-slate-50 flex items-center justify-between">
+                        <span class="text-slate-800">Q. 壁紙の色が少しベージュですが大丈夫？</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300 text-slate-500"></i>
+                    </button>
+                    <div class="faq-answer px-6 pt-0 pb-4">
+                        <p class="text-slate-600">A. 壁投写最適化が自動補正します。白壁でなくてもOK。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item bg-white rounded-lg shadow-sm overflow-hidden border border-slate-200">
+                    <button class="faq-question w-full text-left px-6 py-4 font-semibold text-lg focus:outline-none hover:bg-slate-50 flex items-center justify-between">
+                        <span class="text-slate-800">Q. 音はうるさくなりませんか？</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300 text-slate-500"></i>
+                    </button>
+                    <div class="faq-answer px-6 pt-0 pb-4">
+                        <p class="text-slate-600">A. 夜間モード＆セリフ強調で深夜利用に配慮。ファンノイズも控えめ設計です。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing Section -->
+    <section id="closing" class="py-20 bg-slate-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-8 text-shadow">
+                    さあ、最高の週末を始めよう。
+                </h2>
+                
+                <p class="text-xl md:text-2xl mb-4 text-slate-300">
+                    <strong>「いつか」は、たいてい来ない。</strong>
+                </p>
+                <p class="text-lg mb-8 text-slate-400 leading-relaxed">
+                    新作は配信終了、話題作はネタバレされ、家族の週末はまた埋まる。<br>
+                    <strong>始めた人から、リビングが映画館に変わっています。</strong>
+                </p>
+                
+                <!-- Final CTA -->
+                <div class="final-cta mt-12">
+                    <h3 class="text-2xl font-bold mb-6 text-cyan-300">
+                        ＼5分で自宅を映画館に／
+                    </h3>
+                    <button class="bg-cyan-400 hover:bg-cyan-300 text-slate-900 px-12 py-6 rounded-lg text-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-cyan-500/20">
+                        <i class="fas fa-box mr-3"></i>
+                        在庫を確認する
+                    </button>
+                </div>
+                
+                <p class="mt-8 text-lg text-slate-400">
+                    行動した今日が、あなたの<strong>ファーストショー</strong>です。🎟️
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fixed CTA Bar -->
+    <div id="fixed-cta" class="fixed bottom-0 left-0 right-0 text-white p-4 transform translate-y-full transition-transform duration-300 z-50">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="flex-1">
+                <p class="font-semibold text-slate-100">100インチ級の没入感を、5分で。</p>
+                <p class="text-sm text-slate-300">在庫僅少・今だけ特別価格</p>
+            </div>
+            <button class="bg-cyan-400 hover:bg-cyan-300 text-slate-900 px-6 py-3 rounded-lg font-bold transition-colors">
+                在庫を確認
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
